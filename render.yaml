@@ -1,0 +1,31 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# One web service: Express serves the API (/api/*) and the built React app.
+# MongoDB is hosted on MongoDB Atlas (Render has no managed MongoDB).
+services:
+  - type: web
+    name: hasith-portfolio
+    runtime: node
+    plan: free
+    region: singapore
+    branch: main
+    # Installs both apps, builds React, then loads seedData.js into the database
+    # (this replaces the profile and projects on every deploy; contact messages are kept).
+    buildCommand: >-
+      npm install --prefix server &&
+      npm install --include=dev --prefix client &&
+      npm run build --prefix client &&
+      npm run seed --prefix server
+    startCommand: npm start --prefix server
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22.18.0
+      - key: MONGO_URI
+        sync: false # MongoDB Atlas connection string, entered in the Render dashboard
+      - key: EMAIL_TO
+        value: keyhasith800@gmail.com
+      - key: RESEND_API_KEY
+        sync: false # from resend.com — Render's free plan blocks Gmail SMTP
