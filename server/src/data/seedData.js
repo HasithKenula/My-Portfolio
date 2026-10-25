@@ -9,7 +9,7 @@ export const profile = {
   university: { name: 'SLIIT', url: 'https://www.sliit.lk' },
   location: 'Dehiowita, Sabaragamuwa Province, Sri Lanka',
   about: [
-    'As a second-year undergraduate at SLIIT specializing in Information Technology, I have gained hands-on experience in full-stack development, UI/UX design, mobile app development, and backend technologies through various academic and personal projects.',
+    'As a fourth-year undergraduate at SLIIT specializing in Information Technology, I have gained hands-on experience in full-stack development, UI/UX design, mobile app development, and backend technologies through various academic and personal projects.',
     'I am currently a Trainee Full Stack Developer at Omobio, where I build and ship features across the stack. I enjoy turning ideas into clean, user-friendly products and I am always learning new tools and technologies.',
   ],
   // Put your photo at client/public/profile.jpg (falls back to initials if missing)
@@ -22,7 +22,7 @@ export const profile = {
   },
   stats: [
     { label: 'Connections', value: '155+' },
-    { label: 'Year at SLIIT', value: '2nd' },
+    { label: 'Year at SLIIT', value: '4th' },
     { label: 'Current role', value: 'Omobio' },
   ],
   experience: [
@@ -44,7 +44,7 @@ export const profile = {
       institution: 'Sri Lanka Institute of Information Technology (SLIIT)',
       institutionUrl: 'https://www.sliit.lk',
       degree: 'BSc (Hons) in Information Technology',
-      period: 'Undergraduate - 2nd year',
+      period: 'Undergraduate - 4th year',
       details: 'Specializing in Information Technology.',
     },
   ],
@@ -128,7 +128,7 @@ export const projects = [
       'This personal portfolio: a React frontend backed by an Express and MongoDB API, with content served from the database and a working contact form.',
     tech: ['MongoDB', 'Express', 'React', 'Node.js'],
     category: 'Web',
-    github: GH,
+    github: `${GH}/My-Portfolio`,
     live: '',
     order: 6,
   },
